@@ -10,7 +10,8 @@
 <html>
     <head>
 	    <title>My Online Shop</title>
-		<link rel ="stylesheet" href="styles/style.css" media="all" />
+		<link rel ="stylesheet" href="../styles/style.css" media="all" />
+<!--        <link rel ="stylesheet" href="styles/style.css" media="all" />-->
     </head>
 	
 <body>
@@ -29,11 +30,11 @@
   <!--Navagation Bar starts-->
   <div class ="menubar">
      <ul id="menu">
-	     <li><a href="index.php">Home</a></li>
-		 <li><a href="all_products.php">All Products</a></li>
-		 <li><a href="customer/my_account.php">My Account</a></li>
-		 <li><a href="#">Sign Up</a></li>
-		 <li><a href="cart.php">Shopping Cart</a></li>
+	     <li><a href="../index.php">Home</a></li>
+		 <li><a href="../all_products.php">All Products</a></li>
+		 <li><a href="my_account.php">My Account</a></li>
+		 <li><a href="../customer_register.php">Sign Up</a></li>
+		 <li><a href="../cart.php">Shopping Cart</a></li>
 		 <li><a href="#">Contact Us</a></li>
 	 </ul>
 	 <div id ="form">
@@ -55,7 +56,7 @@
   <ul id="cats">
   <?php
   $user=$_SESSION['customer_email'];
-  $get_img="select *from customers where customer_email='$user'";
+  $get_img="select * from customers where customer_email='$user'";
   $run_img=mysqli_query($con,$get_img);
   $row_img=mysqli_fetch_array($run_img);
   $c_image=$row_img['customer_image'];
@@ -75,7 +76,7 @@
    </div>
     
   
-  <div id="content_area"> 
+  <div id="content_area" style="height: 423px;">
   <?php cart(); ?>
   <div id="shopping_cart">
         <span style="float:right;font-size:18px;padding:5px;line-height:40px;">
